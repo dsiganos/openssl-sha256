@@ -174,6 +174,8 @@ static void sha256_block (SHA256_CTX *ctx, const void *in, size_t num, int host)
 			h = g;	g = f;	f = e;	e = d + T1;
 			d = c;	c = b;	b = a;	a = T1 + T2;
 			}
+
+		data += SHA256_CBLOCK;
 		}
 	else
 		{
@@ -204,7 +206,6 @@ static void sha256_block (SHA256_CTX *ctx, const void *in, size_t num, int host)
 	ctx->h[0] += a;	ctx->h[1] += b;	ctx->h[2] += c;	ctx->h[3] += d;
 	ctx->h[4] += e;	ctx->h[5] += f;	ctx->h[6] += g;	ctx->h[7] += h;
 
-			data += SHA256_CBLOCK;
 			}
 }
 
@@ -253,6 +254,8 @@ static void sha256_block (SHA256_CTX *ctx, const void *in, size_t num, int host)
 		T1 = X[13] = W[13];	ROUND_00_15(13,d,e,f,g,h,a,b,c);
 		T1 = X[14] = W[14];	ROUND_00_15(14,c,d,e,f,g,h,a,b);
 		T1 = X[15] = W[15];	ROUND_00_15(15,b,c,d,e,f,g,h,a);
+
+		data += SHA256_CBLOCK;
 		}
 	else
 		{
@@ -291,7 +294,6 @@ static void sha256_block (SHA256_CTX *ctx, const void *in, size_t num, int host)
 	ctx->h[0] += a;	ctx->h[1] += b;	ctx->h[2] += c;	ctx->h[3] += d;
 	ctx->h[4] += e;	ctx->h[5] += f;	ctx->h[6] += g;	ctx->h[7] += h;
 
-			data += SHA256_CBLOCK;
 			}
 	}
 
