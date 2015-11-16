@@ -13,3 +13,6 @@ reqU.ss
 certU.ss
 Makefile.save
 tmp.bntest
+evptests.txt
+sha256t
+sha512t
