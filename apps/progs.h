@@ -134,6 +134,14 @@ FUNCTION functions[] = {
 #ifndef OPENSSL_NO_SHA1
 	{FUNC_TYPE_MD,"sha1",dgst_main},
 #endif
+#ifndef OPENSSL_NO_SHA256
+	{FUNC_TYPE_MD,"sha224",dgst_main},
+	{FUNC_TYPE_MD,"sha256",dgst_main},
+#endif
+#ifndef OPENSSL_NO_SHA512
+	{FUNC_TYPE_MD,"sha384",dgst_main},
+	{FUNC_TYPE_MD,"sha512",dgst_main},
+#endif
 #ifndef OPENSSL_NO_MDC2
 	{FUNC_TYPE_MD,"mdc2",dgst_main},
 #endif
